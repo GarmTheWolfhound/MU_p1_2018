@@ -42,6 +42,9 @@ void setup() {
 }
 
 void loop() {
+ 
+ //Trying to read from server
+ 
     if (client.available()) {
     char c = client.read();
     Serial.println(c);
