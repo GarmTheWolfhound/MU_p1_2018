@@ -1,5 +1,6 @@
 package server;
 
+import java.io.Console;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
@@ -13,11 +14,21 @@ public class TestServerArduino implements Runnable {
 	private Socket socket;
 	Timer timer ;
 	private int [][] res = new int[120][16];
+	private int [][] arr = new int[120][16];
 	int controllbit = -1;
-
+	Test test = new Test();
+	
+	public int[][] generateArray(){
+		controllbit = ++controllbit % 2;
+		res = test.generateMultipleSets(120, 16, 0, 1);
+		return res;
+		
+	}
 	public TestServerArduino(int port) {
-		timer = new Timer();
-		Test test = new Test();
+//		timer = new Timer();;
+//		arr = generateArray();
+		
+		
 		timer.schedule(new TimerTask() {
 			public void run() {
 				controllbit = ++controllbit % 2;
@@ -25,6 +36,7 @@ public class TestServerArduino implements Runnable {
 				System.out.println("Array generated");
 			}
 		}, 0, 10000);
+		
 		try {
 			serverSocket = new ServerSocket(port);
 			new Thread(this).start();
@@ -53,11 +65,15 @@ public class TestServerArduino implements Runnable {
 		public Listener(Socket socket) {
 			try {
 				os = socket.getOutputStream();
-				os.write(controllbit);
+				os.write(controllbit+2);
+				System.out.println(controllbit+2);
 				for(int i = 0; i < res.length; i++) {
+					System.out.print("{");
 					for(int j = 0; j < 16; j++) {
 						os.write(res[i][j]);
+						System.out.print(res[i][j] + ", ");
 					}
+					System.out.println("}");
 				}
 				os.flush();
 			} catch (IOException e) {
@@ -67,6 +83,7 @@ public class TestServerArduino implements Runnable {
 				try {
 					os.close();
 					socket.close();
+				//	arr = generateArray();
 					System.out.println("Connection closed");
 				} catch (IOException e) {
 					e.printStackTrace();
