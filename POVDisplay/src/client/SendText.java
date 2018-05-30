@@ -21,9 +21,11 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 
 public class SendText extends JFrame implements ActionListener {
-        /**
-         * 
-         */
+	/**
+	 * 
+	 * @author Abdullahi Farah
+	 *
+	 */
         private static final long serialVersionUID = 1L;
         private JPanel main = new JPanel();
         private JTextField textField = new JTextField();
@@ -70,11 +72,7 @@ public class SendText extends JFrame implements ActionListener {
                          String ttext = textField.getText();
                          String text = ttext ;
 
-                        /*
-                           Because font metrics is based on a graphics context, we need to create
-                           a small, temporary image so we can ascertain the width and height
-                           of the final image
-                         */
+                        
                         BufferedImage img = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
                         Graphics2D g2d = img.createGraphics();
                         Font font = new Font("Arial", Font.PLAIN, 48);
@@ -156,5 +154,3 @@ public class SendText extends JFrame implements ActionListener {
             socket.close();
 
         }
-
-}
