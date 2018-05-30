@@ -1,7 +1,11 @@
 package client;
 
 import javax.swing.JFrame;
-
+/**
+ * 
+ * @author Abdullahi Farah 
+ *
+ */
 public class Test {
 	
 	public void start() {
