@@ -25,6 +25,8 @@ import javax.swing.JTextField;
 public class SendImage extends JFrame implements ActionListener {
 	/**
 	 * 
+	 * @author Abdullahi Farah
+	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	File f = null;
@@ -86,7 +88,7 @@ public class SendImage extends JFrame implements ActionListener {
 		if (e.getSource() == btnUpload) {
 			JFileChooser chooser = new JFileChooser();
 			chooser.setCurrentDirectory(f);
-			if (chooser.showOpenDialog(btnUpload) == JFileChooser.APPROVE_OPTION) {
+			if (chooser.showOpenDialog(btnUpload) == JFileChooser.APPROVE_OPTION) {			//Hittar sökväg till vad fil och sparar det som s
 				textField.setText(chooser.getSelectedFile().getAbsolutePath());
 				textField.setEditable(false);
 
@@ -121,15 +123,15 @@ public class SendImage extends JFrame implements ActionListener {
 
 
 
-	public ImageIcon ResizeImage(String imgPath){
+	public ImageIcon ResizeImage(String imgPath){			
 		ImageIcon MyImage = new ImageIcon(imgPath);
-		Image img = MyImage.getImage();
+		Image img = MyImage.getImage();		
 		Image newImage = img.getScaledInstance(label.getWidth(), label.getHeight(),Image.SCALE_SMOOTH);
 		image = new ImageIcon(newImage);
-		s = imgPath;
+		s = imgPath;					
 		return image;
 	}
-	
+	// skickar bilden till server
 	public void send() throws Exception {
 		
         Socket socket = new Socket("192.168.43.58", 13085);
