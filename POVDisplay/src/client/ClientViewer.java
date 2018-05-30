@@ -7,9 +7,11 @@ import java.awt.event.*;
 public class ClientViewer extends JPanel implements ActionListener {
 	/**
 	 * 
+	 * @author Abdullahi Farah
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private JLabel lblNamn = new JLabel("V�lkommen till POV Display");
+	private JLabel lblNamn = new JLabel("Välkommen till POV Display");
 	private JButton btnDraw = new JButton ("Rita");
 	private JButton btnBild = new JButton ("Skicka bild");
 	private JButton btnText = new JButton ("Skicka text");
@@ -19,7 +21,7 @@ public class ClientViewer extends JPanel implements ActionListener {
 
 	
 	public ClientViewer() {
-		setPreferredSize (new Dimension (500,300));
+		setPreferredSize (new Dimension (500,300));		
 
 		lblNamn.setFont(fontLabel);
 		btnDraw.setFont(fontButtons);
@@ -27,7 +29,7 @@ public class ClientViewer extends JPanel implements ActionListener {
 		btnText.setFont(fontButtons);
 		btnExit.setFont(fontButtons);
 		
-        btnDraw.addActionListener( this ); 
+        btnDraw.addActionListener( this ); 					//lägger till knappar, listener o annat
         btnBild.addActionListener( this );
         btnText.addActionListener( this ); 
         btnExit.addActionListener(this);
@@ -38,7 +40,7 @@ public class ClientViewer extends JPanel implements ActionListener {
 		add(btnExit);
 	}
 	
-	 public void actionPerformed(ActionEvent e) {
+	 public void actionPerformed(ActionEvent e) {			//Knapparna
 		 if (e.getSource() == btnDraw) {
 			 new DrawProgram();
 		 }
