@@ -26,7 +26,7 @@ import javax.swing.JPanel;
 public class SwingPaint {
 	/**
 	 * 
-	 * @author Abdullahi Farah
+	 * @author Abdullahi Farah, wahid
 	 * 
 	 */
 	JPanel controls = new JPanel();
