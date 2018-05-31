@@ -15,7 +15,7 @@ import javax.swing.JComponent;
 /**
 * Component for drawing !
 *
-* @author Abdullahi Farah
+* @author Abdullahi Farah, wahid
 *
 */
 public class DrawArea extends JComponent {
