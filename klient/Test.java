@@ -3,7 +3,7 @@ package client;
 import javax.swing.JFrame;
 /**
  * 
- * @author Abdullahi Farah 
+ * @author Abdullahi Farah, wahid 
  *
  */
 public class Test {
