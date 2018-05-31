@@ -23,7 +23,7 @@ import javax.swing.*;
 public class SendText extends JFrame implements ActionListener {
 	/**
 	 * 
-	 * @author Abdullahi Farah
+	 * @author Abdullahi Farah, wahid
 	 *
 	 */
         private static final long serialVersionUID = 1L;
