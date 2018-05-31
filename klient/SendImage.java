@@ -25,7 +25,7 @@ import javax.swing.JTextField;
 public class SendImage extends JFrame implements ActionListener {
 	/**
 	 * 
-	 * @author Abdullahi Farah
+	 * @author Abdullahi Farah, wahid
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
@@ -88,7 +88,7 @@ public class SendImage extends JFrame implements ActionListener {
 		if (e.getSource() == btnUpload) {
 			JFileChooser chooser = new JFileChooser();
 			chooser.setCurrentDirectory(f);
-			if (chooser.showOpenDialog(btnUpload) == JFileChooser.APPROVE_OPTION) {			//Hittar sökväg till vad fil och sparar det som s
+			if (chooser.showOpenDialog(btnUpload) == JFileChooser.APPROVE_OPTION) {			//Hittar sÃ¶kvÃ¤g till vad fil och sparar det som s
 				textField.setText(chooser.getSelectedFile().getAbsolutePath());
 				textField.setEditable(false);
 
