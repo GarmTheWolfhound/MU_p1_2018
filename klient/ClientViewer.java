@@ -7,11 +7,11 @@ import java.awt.event.*;
 public class ClientViewer extends JPanel implements ActionListener {
 	/**
 	 * 
-	 * @author Abdullahi Farah
+	 * @author Abdullahi Farah, wahid
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private JLabel lblNamn = new JLabel("V‰lkommen till POV Display");
+	private JLabel lblNamn = new JLabel("V√§lkommen till POV Display");
 	private JButton btnDraw = new JButton ("Rita");
 	private JButton btnBild = new JButton ("Skicka bild");
 	private JButton btnText = new JButton ("Skicka text");
@@ -29,7 +29,7 @@ public class ClientViewer extends JPanel implements ActionListener {
 		btnText.setFont(fontButtons);
 		btnExit.setFont(fontButtons);
 		
-        btnDraw.addActionListener( this ); 					//l‰gger till knappar, listener o annat
+        btnDraw.addActionListener( this ); 					//l√§gger till knappar, listener o annat
         btnBild.addActionListener( this );
         btnText.addActionListener( this ); 
         btnExit.addActionListener(this);
